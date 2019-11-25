@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>d3.js learning</title>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    </link>
+</head>
+
+<body>
+    <div class=selectors id="payment_select">
+        <h1 class="h1-selector"> Loan Specifics</h1>
+        <h2 class="h2-selector">Total Loan Amount</h2>
+        <input type="text" id="loan_input" value="7500" min="100" step=100 />
+        <h2 class="h2-selector">Monthly Payment</h2>
+        <input type="text" id="payment_input" value="350" min="20" />
+        <h2 class="h2-selector">APR (%)</h2>
+        <input type="text" id="interest_input" value="30" min="0" max="99" />
+        <button id="submit" onclick="update();">Get Repayment Plan</button>
+    </div>
+    <main class="main">
+        <h1 class="h1-main">
+            To pay off
+            <code id=loan_amount></code>
+            ...
+        </h1>
+        <div class="content">
+            <div class="stats" id="stats">
+                <p>
+                    The total time it will take is
+                    <code id=payment_time></code>
+                    months
+                    <br>
+                    The total interest paid is
+                    <code id=interest_amount></code>
+                    <br>
+                    The final cost of the loan is
+                    <code id=total_amount></code>
+                </p>
+            </div>
+            <h1 class="h1-main">Graph</h1>
+            <div id="vis"></div>
+            <details>
+                <summary>Summary Table</summary>
+                <div id="infotable"></div>
+            </details>
+
+        </div>
+
+    </main>
+    <script src="javascript/stacked-chart.js" type="text/javascript"></script>
+    <script src="javascript/event-listeners.js" type="text/javascript"></script>
+</body>
+
+</html>
