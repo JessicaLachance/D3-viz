@@ -1,0 +1,159 @@
+.selectors {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 20;
+    left: 20;
+    background: #5b315e;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+input {
+    display: inline-block;
+    font-size: 1em;
+    font-family: Segoe UI;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.2;
+    padding: .6em 1.4em .5em .8em;
+    width: 100px;
+    box-sizing: border-box;
+    margin: 5px;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    width: 90%;
+}
+
+input:focus {
+    border-color: #c6dbef;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+.dropdown option {
+    font-weight: normal;
+}
+
+h1, summary {
+    display: inline-block;
+    font-size: 2em;
+    font-family: Segoe UI;
+    font-weight: 600;
+    color: white;
+    width: 90%;
+    margin: 10 0 0 0;
+}
+
+h2 {
+    display: inline-block;
+    font-size: 1em;
+    font-family: Segoe UI;
+    height: 1em;
+}
+
+.h1-selector, .h2-selector {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.main{
+    margin-left:260px;  
+    float: left;
+
+}
+
+.content{
+    border: 5px solid #54575a;
+    padding: 30px;
+}
+
+.h1-main, .h2-main{
+    color: #54575a;
+}
+summary{
+    color: #54575a;
+    margin-bottom: 10px;
+}
+.stats{
+    margin: 0;
+}
+
+p {
+    font: 1.5em Segoe UI;
+    color: #54575a;
+    margin: 0;
+}
+code {
+    font: 1em Segoe UI;
+    font-weight: bold;
+}
+
+text {
+    font: 1.3em Segoe UI;
+    color: #54575a;
+}
+
+svg {
+    shape-rendering: crispEdges;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+}
+
+path.domain {
+    stroke: none;
+}
+
+.y .tick line {
+    stroke: #ddd;
+}
+
+
+table {
+    width: 1050px;
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: Segoe UI;
+    background: whitesmoke;
+}
+
+
+th {
+    background:  #a83e67;
+    color: white;
+    font-weight: bold;
+    cursor: s-resize;
+    background-repeat: no-repeat;
+    background-position: 3% center;
+}
+
+td,
+th {
+    padding: 3px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th.des:after {
+    content: "\21E9";
+}
+
+th.aes:after {
+    content: "\21E7";
+}
