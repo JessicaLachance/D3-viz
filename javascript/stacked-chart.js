@@ -149,13 +149,13 @@ function createChart(loan) {
             tooltip.select("text").text(d3.format("$,.2f")(d[1] - d[0]));
         });
 
-    var tooltip = svg.append("g")
+    tooltip = svg.append("g")
         .attr("class", "tooltip")
         .style("display", "none");
 
     tooltip.append("rect")
-        .attr("width", 65)
-        .attr("height", "1.4em")
+        .attr("width", 60)
+        .attr("height", "1.2em")
         .attr("fill", "white")
         .style("opacity", 0.5)
         .attr("transform", "translate(" + -15 + ",0)");
@@ -163,6 +163,7 @@ function createChart(loan) {
     tooltip.append("text")
         .attr("x", 15)
         .attr("dy", "1em")
+        .attr("text-anchor", "middle");
 }
 
 function updateChart(loan) {
@@ -257,7 +258,9 @@ function updateTable(loan) {
     rows.enter()
         .append('tr');
 
-    row_entries = rows.selectAll('td')
+    rows.exit().remove();
+
+    row_entries = table.select("tbody").selectAll('tr').selectAll('td')
         .data(function (d) {
             return column_names.map(function (k) {
                 if (k == 'payment_n') {
@@ -268,13 +271,12 @@ function updateTable(loan) {
                 }
             });
         })
+        .text((d) => d.value);
 
     row_entries.enter()
         .append('td')
+        .text((d) => d.value);
 
-    row_entries.text((d) => d.value);
-
-    rows.exit().remove();
 }
 
 function updateStats(loan) {
@@ -285,6 +287,5 @@ function updateStats(loan) {
     document.getElementById('interest_amount').innerHTML = d3.format("$,.2f")(total_interest);
     document.getElementById('total_amount').innerHTML = d3.format("$,.2f")((total_interest + (+document.getElementById('loan_input').value)));
 }
-
 
 initialLoad();
